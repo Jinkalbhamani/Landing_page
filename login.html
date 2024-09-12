@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register - Flora</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+      
+      body {
+           background: url(images/bg1.jpg) no-repeat;
+           color: #fff;
+           font-family: 'Arial', sans-serif;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           background-size: cover;
+           height: 100vh;
+           margin: 0;
+         }
+         
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="form-container">
+            <div class="form-toggle">
+                <button id="login-toggle" class="active" onclick="toggleForm('login')">Login</button>
+                <button id="register-toggle" onclick="toggleForm('register')">Register</button>
+            </div>
+            <div class="form-content">
+                <form id="login-form" class="form">
+                    <h2>Login</h2>
+                    <div class="input-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+                <form id="register-form" class="form hidden">
+                    <h2>Register</h2>
+                    <div class="input-group">
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+    
+    function toggleForm(formType) {
+    const loginForm = document.getElementById('login-form');
+    const registerForm = document.getElementById('register-form');
+    const loginToggle = document.getElementById('login-toggle');
+    const registerToggle = document.getElementById('register-toggle');
+
+    if (formType === 'login') {
+        loginForm.classList.remove('hidden');
+        registerForm.classList.add('hidden');
+        loginToggle.classList.add('active');
+        registerToggle.classList.remove('active');
+    } else {
+        loginForm.classList.add('hidden');
+        registerForm.classList.remove('hidden');
+        loginToggle.classList.remove('active');
+        registerToggle.classList.add('active');
+    }
+}
+
+
+    </script>
+</body>
+</html>
